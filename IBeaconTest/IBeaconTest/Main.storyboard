@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RaU-TS-72H">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="zjH-s3-59U">
+            <objects>
+                <viewController id="RaU-TS-72H" customClass="IBTViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QEm-A2-AXb"/>
+                        <viewControllerLayoutGuide type="bottom" id="q4V-YY-6Ru"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VX2-Zf-Dr7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L63-ud-NDb">
+                                <rect key="frame" x="301" y="522" width="51" height="31"/>
+                                <connections>
+                                    <action selector="monitoringSwitched:" destination="RaU-TS-72H" eventType="valueChanged" id="UWD-Mt-J1x"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pvq-uO-aRd">
+                                <rect key="frame" x="301" y="561" width="51" height="31"/>
+                                <connections>
+                                    <action selector="rangingSwitched:" destination="RaU-TS-72H" eventType="valueChanged" id="9TZ-od-NFv"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon region monitoring" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ug7-Bw-KMj">
+                                <rect key="frame" x="16" y="527" width="277" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon region ranging" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGt-tG-foc">
+                                <rect key="frame" x="16" y="566" width="277" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="sUX-Km-rz5">
+                                <rect key="frame" x="0.0" y="20" width="600" height="494"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BeaconCell" id="BcB-wS-mQT" customClass="IBTBeaconTableViewCell">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BcB-wS-mQT" id="nOQ-RO-SJ0">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZm-LX-x8W">
+                                                    <rect key="frame" x="16" y="8" width="488" height="20"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proximity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMi-Yc-agy">
+                                                    <rect key="frame" x="512" y="11" width="80" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="Bb2-s9-Zyo"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TeF-SC-N6K">
+                                                    <rect key="frame" x="16" y="31" width="488" height="14"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="DMi-Yc-agy" secondAttribute="bottom" constant="3" id="4fY-0V-4o6"/>
+                                                <constraint firstItem="EZm-LX-x8W" firstAttribute="width" secondItem="TeF-SC-N6K" secondAttribute="width" id="5NN-uF-O1Q"/>
+                                                <constraint firstItem="DMi-Yc-agy" firstAttribute="leading" secondItem="EZm-LX-x8W" secondAttribute="trailing" constant="8" id="6Lo-KV-O2t"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="DMi-Yc-agy" secondAttribute="trailing" id="FN5-Wp-GEK"/>
+                                                <constraint firstItem="DMi-Yc-agy" firstAttribute="top" secondItem="nOQ-RO-SJ0" secondAttribute="topMargin" constant="3" id="oXa-ON-Otv"/>
+                                                <constraint firstItem="EZm-LX-x8W" firstAttribute="leading" secondItem="nOQ-RO-SJ0" secondAttribute="leadingMargin" constant="8" id="pBi-LZ-KEb"/>
+                                                <constraint firstItem="EZm-LX-x8W" firstAttribute="leading" secondItem="TeF-SC-N6K" secondAttribute="leading" id="reb-Zx-gzR"/>
+                                                <constraint firstItem="EZm-LX-x8W" firstAttribute="top" secondItem="nOQ-RO-SJ0" secondAttribute="topMargin" id="uwa-63-yc9"/>
+                                                <constraint firstItem="TeF-SC-N6K" firstAttribute="top" secondItem="EZm-LX-x8W" secondAttribute="bottom" constant="3" id="zM6-aj-CIf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="beaconDetailLabel" destination="TeF-SC-N6K" id="gcL-90-XyI"/>
+                                            <outlet property="beaconLabel" destination="EZm-LX-x8W" id="u6i-6p-GWJ"/>
+                                            <outlet property="proximityLabel" destination="DMi-Yc-agy" id="QE5-Ya-mLW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="RaU-TS-72H" id="Qb6-V3-0E3"/>
+                                    <outlet property="delegate" destination="RaU-TS-72H" id="rzJ-mE-Asm"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sUX-Km-rz5" firstAttribute="leading" secondItem="VX2-Zf-Dr7" secondAttribute="leadingMargin" constant="-16" id="6kN-wQ-Z5h"/>
+                            <constraint firstAttribute="centerX" secondItem="pvq-uO-aRd" secondAttribute="centerX" constant="-25" id="7KH-MO-byW"/>
+                            <constraint firstItem="NGt-tG-foc" firstAttribute="leading" secondItem="VX2-Zf-Dr7" secondAttribute="leadingMargin" id="81h-2p-qgE"/>
+                            <constraint firstItem="pvq-uO-aRd" firstAttribute="leading" secondItem="NGt-tG-foc" secondAttribute="trailing" constant="8" symbolic="YES" id="BZ0-ED-FcQ"/>
+                            <constraint firstItem="pvq-uO-aRd" firstAttribute="top" secondItem="L63-ud-NDb" secondAttribute="bottom" constant="8" symbolic="YES" id="HB9-b2-u2p"/>
+                            <constraint firstItem="q4V-YY-6Ru" firstAttribute="top" secondItem="pvq-uO-aRd" secondAttribute="bottom" constant="8" symbolic="YES" id="JgW-pl-AiQ"/>
+                            <constraint firstItem="L63-ud-NDb" firstAttribute="top" secondItem="sUX-Km-rz5" secondAttribute="bottom" constant="8" symbolic="YES" id="M2w-go-aA5"/>
+                            <constraint firstItem="L63-ud-NDb" firstAttribute="centerY" secondItem="ug7-Bw-KMj" secondAttribute="centerY" id="Npt-Dn-ZdK"/>
+                            <constraint firstItem="L63-ud-NDb" firstAttribute="centerX" secondItem="pvq-uO-aRd" secondAttribute="centerX" id="dc4-Sc-b42"/>
+                            <constraint firstItem="ug7-Bw-KMj" firstAttribute="leading" secondItem="VX2-Zf-Dr7" secondAttribute="leadingMargin" id="eXp-J9-Gtw"/>
+                            <constraint firstItem="sUX-Km-rz5" firstAttribute="top" secondItem="QEm-A2-AXb" secondAttribute="bottom" id="kpV-hG-cz5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sUX-Km-rz5" secondAttribute="trailing" constant="-16" id="pE9-LR-quV"/>
+                            <constraint firstItem="NGt-tG-foc" firstAttribute="centerY" secondItem="pvq-uO-aRd" secondAttribute="centerY" id="riP-3c-cFx"/>
+                            <constraint firstItem="L63-ud-NDb" firstAttribute="leading" secondItem="ug7-Bw-KMj" secondAttribute="trailing" constant="8" symbolic="YES" id="vuR-QH-p4r"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <outlet property="regionMonitoringSwitch" destination="L63-ud-NDb" id="TsM-Ky-bS0"/>
+                        <outlet property="regionRangingSwitch" destination="pvq-uO-aRd" id="RBn-zu-azl"/>
+                        <outlet property="tableView" destination="sUX-Km-rz5" id="HWM-a7-hxT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BK9-XN-0kE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="313" y="395"/>
+        </scene>
+    </scenes>
+</document>
